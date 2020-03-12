@@ -6,7 +6,7 @@ public class Team implements Serializable {
     public String nama;
     public String image;
 
-    public Team(String nama, String image) {
+    public Team(String image, String nama) {
         this.nama = nama;
         this.image = image;
     }

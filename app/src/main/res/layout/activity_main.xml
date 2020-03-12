@@ -40,10 +40,11 @@
         android:layout_marginEnd="16dp"
         android:text="Logo RecyclerView"
         android:textAllCaps="false"
+        android:onClick="handleLogoButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_simple" />
-    <!--        android:onClick="handleLogoButton"-->
+
 
     <Button
         android:id="@+id/button_grid"

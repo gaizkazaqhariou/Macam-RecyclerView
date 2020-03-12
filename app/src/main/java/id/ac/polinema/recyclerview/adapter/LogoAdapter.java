@@ -1,51 +1,59 @@
 package id.ac.polinema.recyclerview.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 import id.ac.polinema.recyclerview.R;
+import id.ac.polinema.recyclerview.model.Team;
 
-public class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.ViewHolder> {
+public class LogoAdapter extends RecyclerView.Adapter<LogoAdapter.ViewHolder> {
 
-    private List<String> items;
+    private Context context;
+    private List<Team> items;
 
-    public SimpleAdapter(List<String> items) {
+    public LogoAdapter(Context context, List<Team> items) {
+        this.context = context;
         this.items = items;
     }
 
     @NonNull
     @Override
-
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_logo, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        String item = items.get(position);
-        holder.nameText.setText(item);
+        Team item = items.get(position);
+        Picasso.get().load(item.getImage()).into(holder.logoTeam);
+        holder.nameTeam.setText(item.getNama());
     }
 
     @Override
     public int getItemCount() {
         return (items != null) ? items.size() : 0;
-        //ini if else mode fast
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView nameText;
+        ImageView logoTeam;
+        TextView nameTeam;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            nameText = itemView.findViewById(R.id.tvNameClub);
+            logoTeam = itemView.findViewById(R.id.image_logo);
+            nameTeam = itemView.findViewById(R.id.tvNameClub);
         }
     }
 }
