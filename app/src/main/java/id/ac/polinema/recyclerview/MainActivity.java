@@ -28,4 +28,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, GridActivity.class);
         startActivity(intent);
     }
+
+    public void handleViewTypeButton(View view) {
+        Intent intent = new Intent(this, ViewTypeActivity.class);
+        startActivity(intent);
+    }
 }
