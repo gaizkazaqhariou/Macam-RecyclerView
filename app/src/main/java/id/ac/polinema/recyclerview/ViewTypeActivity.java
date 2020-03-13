@@ -21,8 +21,9 @@ public class ViewTypeActivity extends AppCompatActivity {
 
         RecyclerView teamsView = findViewById(R.id.rv_teams);
         List<Team> teams = new ArrayList<>();
-        teams.add(new Team("https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/360px-Liverpool_FC.svg.png", "Liverpool"));
-        teams.add(new Team("https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Manchester_City_FC_badge.svg/360px-Manchester_City_FC_badge.svg.png", "Man. City"));
+        teams.add(new Team("@drawable/liverpool.png", "Liverpool"));
+        teams.add(new Team("@drawable/manchester_city.png", "Man. City"));
+        teams.add(new Team("@drawable/liverpool.png", "Liverpool"));
 
         ReversedAdapter adapter = new ReversedAdapter(this, teams);
         teamsView.setAdapter(adapter);
