@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ViewTypeActivity"></activity>
+        <activity android:name=".ExcerciseActivity"></activity>
+        <activity android:name=".ViewTypeActivity" />
         <activity android:name=".GridActivity" />
         <activity android:name=".LogoActivity" />
         <activity android:name=".SimpleActivity" />
